@@ -4,6 +4,7 @@ import { SharedModule } from '@shared/shared.module';
 import { RouteRoutingModule } from './routes-routing.module';
 // dashboard pages
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LaneCardComponent } from './dashboard/lane-card/lane-card.component';
 // passport pages
 import { UserLoginComponent } from './passport/login/login.component';
 import { UserRegisterComponent } from './passport/register/register.component';
@@ -18,6 +19,7 @@ import { Exception500Component } from './exception/500.component';
 
 const COMPONENTS = [
   DashboardComponent,
+  LaneCardComponent,
   // passport pages
   UserLoginComponent,
   UserRegisterComponent,

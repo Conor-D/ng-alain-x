@@ -1,3 +1,22 @@
-<div class="content__title">
-  <h1>Page Name</h1>
+<div class="lane-box p-md">
+  <div class="search-box px-md">
+    <span class="pr-sm">车道筛选：</span>
+    <nz-radio-group [(ngModel)]="pos" class="pr-lg">
+      <label nz-radio-button [nzValue]="3">全部</label>
+      <label nz-radio-button [nzValue]="2">出闸</label>
+      <label nz-radio-button [nzValue]="1">入闸</label>
+    </nz-radio-group>
+    <nz-select [(ngModel)]="selectLanes" nzMode="multiple">
+      <nz-option *ngFor="let lane of lanes" nzCustomContent [nzLabel]="lane.name" [nzValue]="lane">
+          <span>{{lane.name}}</span>
+          <nz-divider nzType="vertical"></nz-divider>
+          <span>{{lane.pos === 1 ? '入闸' : '出闸'}}</span>
+      </nz-option>
+    </nz-select>
+  </div>
+  <div class="lane-list" nz-row nzGutter="8">
+    <div *ngFor="let lane of viewLanes; trackBy name" nz-col nzMd="12" nzLg="8">
+      <lane-card [lane]="lane"></lane-card>
+    </div>
+  </div>
 </div>

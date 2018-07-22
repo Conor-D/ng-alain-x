@@ -33,7 +33,6 @@ export class StartupService {
           return [appData];
       })
     ).subscribe(([appData]) => {
-
       // application data
       const res: any = appData;
       // 应用信息：包括站点名、描述、年份
@@ -86,12 +85,27 @@ export class StartupService {
           {
             text: '仪表盘',
             link: '/dashboard',
-            icon: 'anticon anticon-appstore-o'
+            icon: 'anticon anticon-dashboard'
           },
           {
             text: '快捷菜单',
-            icon: 'anticon anticon-rocket',
-            shortcut_root: true
+            icon: 'anticon anticon-form'
+          },
+          {
+            text: '快捷菜单',
+            icon: 'anticon anticon-table'
+          },
+          {
+            text: '快捷菜单',
+            icon: 'anticon anticon-profile'
+          },
+          {
+            text: '快捷菜单',
+            icon: 'anticon anticon-check-circle-o'
+          },
+          {
+            text: '快捷菜单',
+            icon: 'anticon anticon-warning'
           }
         ]
       }

@@ -1,0 +1,37 @@
+<nz-card [nzTitle]="titleTpl" [nzActions]="[action, action, action, action]" [nzExtra]="date">
+  <div class="lane-card-content d-flex justify-content-between">
+    <ul class="lane-card-info">
+      <li><span>识别车牌：</span>{{lane.discernPlate}}</li>
+      <li><span>刷卡车牌：</span>{{lane.realPlate}}</li>
+      <li><span>前箱号：</span>TEMU1234567</li>
+      <li><span>后箱号：</span>TEMU1234567</li>
+      <li><span>当前进度：</span>提交TOS</li>
+    </ul>
+    <div class="lane-card-img-wrapper d-flex">
+      <ul class="img-pointer d-flex justify-content-around">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="img-view">
+        <i class="anticon anticon-picture"></i>
+      </div>
+    </div>
+  </div>
+  <nz-progress [nzPercent]="lane.step / 5 * 100" nzSize="small" [nzShowInfo]="false"></nz-progress>
+</nz-card>
+<ng-template #titleTpl>
+  <i class="anticon anticon-question"></i>
+  <h3 class="d-inline-block mx-sm my0" [style.color]="lane.enable === false ? '#ccc': false">{{lane.name}}</h3>
+  
+  <nz-tag *ngIf="lane.pos === 1" [nzColor]="lane.enable === false ? '#ccc' : '#00cc00'">入闸</nz-tag>
+  <nz-tag *ngIf="lane.pos === 2" [nzColor]="lane.enable === false ? '#ccc' : '#00cc00'">出闸</nz-tag>
+</ng-template>
+<ng-template #date>
+  <i class="anticon anticon-question"></i>
+  13:12
+</ng-template>
+<ng-template #action>
+  <i class="anticon anticon-question"></i>
+</ng-template>

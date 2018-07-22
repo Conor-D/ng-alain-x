@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   constructor(
     private settings: SettingsService,
     private router: Router,
-    private titleSrv: TitleService,
+    private titleSrv: TitleService
   ) {}
 
   ngOnInit() {
